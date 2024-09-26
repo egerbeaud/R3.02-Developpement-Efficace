@@ -1,3 +1,8 @@
+#ifndef LIVRE_H
+#define LIVRE_H
+
+
+
 #include <string>;
 
 using namespace std;
@@ -18,3 +23,5 @@ public:
     int getAnneeParution();
     int getNombrePage();
 };
+
+#endif

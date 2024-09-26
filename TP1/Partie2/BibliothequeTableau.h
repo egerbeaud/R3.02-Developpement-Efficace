@@ -7,10 +7,24 @@
 
 using namespace std;
 
-class BibliothequeTableau {
-    private:
-    Livre contenu[100];
-    
-}
+class BibliothequeTableau
+{
+private:
+    const static int TAILLE = 100;
+    Livre livres[TAILLE];
+    int nb_livres;
+
+public:
+    BibliothequeTableau();
+
+    bool existe(Livre livre);
+
+    void ajouterLivre(Livre livre);
+    void supprimerLivre(int index);
+    Livre rechercherLivre(string titre);
+    void afficherBibliotheque();
+
+    void afficherInfosLivre(Livre livre);
+};
 
 #endif
