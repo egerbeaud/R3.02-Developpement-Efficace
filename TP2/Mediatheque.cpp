@@ -1,4 +1,4 @@
-#include "BibliothequeTableau.h"
+#include "Mediatheque.h"
 
 #include <iostream>
 #include <string>
@@ -6,16 +6,16 @@
 
 using namespace std;
 
-BibliothequeTableau::BibliothequeTableau() {
-    nb_livres = 0;
-    livres[TAILLE];
+Mediatheque::Mediatheque() {
+    mediatheque[TAILLE];
+    nb_medias = 0 ;
     }
 
 
-bool BibliothequeTableau::existe(Livre livre) {
+bool Mediatheque::existe(Media* media) {
 
     for (int i = 0; i < TAILLE; i++){
-        if (livres[i].getTitre() == livre.getTitre()){
+        if (media[i].getTitre() == media->getTitre()){
             return true;
         }
         else
@@ -26,57 +26,56 @@ bool BibliothequeTableau::existe(Livre livre) {
 
 }
 
-void BibliothequeTableau::ajouterLivre(Livre livre) {
+void Mediatheque::ajouterMedia(Media* media) {
 
-    if(existe(livre)) {
-        cout<<"Ce livre existe deja"<<endl;
+    if(existe(media)) {
+        cout<<"Cet objet existe deja"<<endl;
     }
     else {
-        livres[nb_livres] = livre;
-        nb_livres++;
+        mediatheque[nb_medias] = media;
+        nb_medias++;
     }
 }
 
 
-void BibliothequeTableau::supprimerLivre(int index) {
-    if (index < 0 || index >= nb_livres) {
+void Mediatheque::supprimerMedia(int index) { 
+    if (index < 0 || index >= nb_medias) {
         cout << "L'index est invalide !" << endl;
         return;
     }
 
-    for (int i = index; i < nb_livres - 1; i++) {
-        livres[i] = livres[i + 1];
+    for (int i = index; i < nb_medias - 1; i++) {
+        mediatheque[i] = mediatheque[i + 1];
     }
 
-    nb_livres--;
+    nb_medias--;
 }
 
-void BibliothequeTableau::afficherBibliotheque() {
-    if(nb_livres == 0) {
-        cout << "La bibliotheque est vide !" << endl;
+void Mediatheque::afficherMediatheque() {
+    if(nb_medias == 0) {
+        cout << "La médiatheque est vide !" << endl;
     }
     else {
-        for (int i = 0; i < nb_livres; i++) {
-            cout << livres[i].getTitre() << endl;
+        for (int i = 0; i < nb_medias; i++) {
+            cout << mediatheque[i]->getTitre() << endl;
         }
     }
 }
 
-void BibliothequeTableau::afficherInfosLivre(Livre livre) {
-    cout << "Le livre" << livre.getTitre()  << " : "<< endl;
-    cout << "Autheur : " << livre.getNomAuteur() << endl;
-    cout <<  "Année de parution : " << livre.getAnneeParution() << endl;
-    cout << "Nombre de pages : " << livre.getNombrePage() << endl;
+void Mediatheque::afficherInfosMedia(Media* media) {
+    cout << "Le livre" << media->getTitre()  << " : "<< endl;
+    cout << "Créateur : " << media->getCreateur() << endl;
+    cout <<  "Année de parution : " << media->getAnneeParution() << endl;
 }
 
-Livre BibliothequeTableau::rechercherLivre(string titre) {
-    for (int i = 0; i < nb_livres; i++) {
-        if (livres[i].getTitre() == titre) {
-            return livres[i];
-        }
-    }
-    cout << "Le livre n'est pas dans la bibliothèque"<< endl;
-}
+// Media Mediatheque::rechercherMedia(string* titre) {
+//     for (int i = 0; i < nb_medias; i++) {
+//         if (nb_medias[i].getTitre() == titre) {
+//             return mediatheque[i];
+//         }
+//     }
+//     cout << "Cet objet n'est pas dans la médiatheque"<< endl;
+// }
 
 
 

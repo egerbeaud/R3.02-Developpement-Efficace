@@ -6,20 +6,20 @@ using namespace std;
 
 class Media
 {
-private:
+protected:
     string titre;
     string createur;
     int anneeParution;
     
 public:
+    Media(string titre, string createur, int anneeParution);
 
-    string get_titre();
-    string get_createur();
-    int get_anneeParution();
-
-    void set_titre(string titre);
-    void set_createur(string createur);
-    void set_anneeParution(int anneeParution);
+    string getTitre();
+    string getCreateur();
+    int getAnneeParution();
+    void setTitre(string new_titre);
+    void setCreateur(string new_createur);
+    void setAnneParution(int new_anneeParution);
 
     virtual void afficherInfosMedia() = 0;
     virtual void creerMedia() = 0;

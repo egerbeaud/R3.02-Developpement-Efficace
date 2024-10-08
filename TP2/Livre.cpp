@@ -1,27 +1,13 @@
 #include "Livre.h"
 
+
 using namespace std;
 
-Livre::Livre(string titre, string nomAuteur, int anneeParution, int nombrePage)
+Livre::Livre(string titre, string nomAuteur, int anneeParution, int nombrePage) : Media(titre, nomAuteur, anneeParution)
 {
-    titre = titre;
-    nomAuteur = nomAuteur;
-    anneeParution = anneeParution;
-    nombrePage = nombrePage;
+    this->nombrePage = nombrePage;
 }
 
-
-string Livre::getTitre(){
-    return titre;
-}
-
-string Livre::getNomAuteur(){
-    return nomAuteur;
-}
-
-int Livre::getAnneeParution(){
-    return anneeParution;
-}
 
 int Livre::getNombrePage(){
     return nombrePage;

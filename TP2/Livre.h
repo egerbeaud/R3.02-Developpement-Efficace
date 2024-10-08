@@ -1,18 +1,16 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 
+#include "Media.h"
 
 
 #include <string>;
 
 using namespace std;
 
-class Livre
+class Livre : public Media
 {
 private:
-    string titre;
-    string nomAuteur;
-    int anneeParution;
     int nombrePage;
 
 public:

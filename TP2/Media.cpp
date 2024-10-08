@@ -4,25 +4,31 @@
 
 using namespace std;
 
-string Media::get_titre(){
-    return titre;
+Media::Media(string titre, string createur, int anneeParution){
+    this->titre = titre;
+    this->createur = createur;
+    this->anneeParution = anneeParution;
 }
 
-string Media::get_createur(){
-    return createur;
-}
-int Media::get_anneeParution(){
-    return anneeParution;
+string Media::getTitre(){
+    return this->titre;
 }
 
-void Media::set_titre(string new_titre) {
-    titre = new_titre;
+string Media::getCreateur(){
+    return this->createur;
+}
+int Media::getAnneeParution(){
+    return this->anneeParution;
 }
 
-void Media::set_createur(string new_createur) {
-    createur = new_createur;
+void Media::setTitre(string new_titre) {
+    this->titre = new_titre;
 }
 
-void Media::set_anneeParution(int new_anneeParution) {
-    anneeParution = new_anneeParution;
+void Media::setCreateur(string new_createur) {
+    this->createur = new_createur;
+}
+
+void Media::setAnneParution(int new_anneeParution) {
+    this->anneeParution = new_anneeParution;
 }

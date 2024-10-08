@@ -11,20 +11,21 @@ class Mediatheque
 {
 private:
 
-    Media* contenu[TAILLE];
-    int nb_livres;
+    Media* mediatheque[TAILLE];
+    int nb_medias;
 
 public:
     
 
-    bool existe(Livre livre);
+    bool existe(Media* media);
 
-    void ajouterLivre(Livre livre);
-    void supprimerLivre(int index);
-    Livre rechercherLivre(string titre);
-    void afficherBibliotheque();
+    void ajouterMedia(Media* media);
+    void supprimerMedia(int index);
+    Media rechercherMedia(string* titre);
+    void afficherMediatheque();
 
-    static void afficherInfosLivre(Livre livre);
+   static void afficherInfosMedia(Media *media);
+
 };
 
 #endif
